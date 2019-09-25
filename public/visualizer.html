@@ -60,6 +60,7 @@
 		<script src="js/three.js"></script>
     <script src="js/obj.js"></script>
     <script src="js/orbControls.js"></script>
+    <script type="text/javascript" src="js/dat.gui.js"></script>
 		<script>
     
 
@@ -119,7 +120,34 @@
       
       animate();
       
-      
+    
+    
+  var FizzyText = function() {
+    this.message = 'dat.gui';
+    this.speed = 0.8;
+    this.displayOutline = false;
+    this.explode = function() {  };
+  // Define render logic ...
+};
+
+window.onload = function() {
+  var text = new FizzyText();
+  var gui = new dat.GUI();
+  gui.add(text, 'message');
+  gui.add(text, 'speed', -5, 5);
+  gui.add(text, 'displayOutline');
+  gui.add(text, 'explode');
+  f1.add(text, 'speed');
+  f1.add(text, 'noiseStrength');
+
+  var f2 = gui.addFolder('Letters');
+  f2.add(text, 'growthSpeed');
+  f2.add(text, 'maxSize');
+  f2.add(text, 'message');
+
+f2.open();
+};
+  
           
 /*
 			var geometry = new THREE.CylinderGeometry(0, radius, height, 2, 1)
