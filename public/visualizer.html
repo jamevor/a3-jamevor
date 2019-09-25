@@ -62,8 +62,31 @@
     <script src="js/orbControls.js"></script>
 		<script>
     
-            // instantiate a loader
+
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize( window.innerWidth, window.innerHeight );
+			document.body.appendChild( renderer.domElement );
+            var radius = 5;
+            var height = 2;
+      
+      camera.position.z = 200;
+      
+      var controls = new THREE.OrbitControls(camera, renderer.domElement);
+      controls.enableDamping = true;
+      controls.campingFactor = 0.25;
+      controls.enableZoom = true;
+      
+      var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
+      keyLight.position.set(-100, 0, 100);
+      
+      scene.add(keyLight);
+      
+                // instantiate a loader
       var loader = new THREE.OBJLoader();
+      
 
       // load a resource
       loader.load(
@@ -88,28 +111,16 @@
 
         }
       );
-   
       
-			var scene = new THREE.Scene();
-			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
-
-			var renderer = new THREE.WebGLRenderer();
-			renderer.setSize( window.innerWidth, window.innerHeight );
-			document.body.appendChild( renderer.domElement );
-            var radius = 5;
-            var height = 2;
+      var animate = function () {
+        requestAnimationFrame( animate );
+        renderer.render( scene, camera );
+      }
       
-      camera.position.z = 200;
+      animate();
       
-      var controls = new THREE.OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
-      controls.campingFactor = 0.25;
-      controls.enableZoom = true;
       
-      var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
-      keyLight
-      
-      var animate = function () {}
+          
 /*
 			var geometry = new THREE.CylinderGeometry(0, radius, height, 2, 1)
       //var newGeometry = new THREE.
