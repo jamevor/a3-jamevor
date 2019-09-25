@@ -93,7 +93,7 @@
       loader.load(
         // resource URL
         "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpack%20de%20jus%20pindra%202.obj?v=1569382126864",
-        ""
+        "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fcroissant_01_col.obj?v=1569432139088",
         // called when resource is loaded
         function ( object ) {
 
@@ -123,31 +123,20 @@
       
     
     
-  var FizzyText = function() {
-    this.message = 'dat.gui';
-    this.speed = 0.8;
-    this.displayOutline = false;
-    this.explode = function() {  };
-  // Define render logic ...
-};
+var gui = new dat.GUI();
 
-window.onload = function() {
-  var text = new FizzyText();
-  var gui = new dat.GUI();
-  gui.add(text, 'message');
-  gui.add(text, 'speed', -5, 5);
-  gui.add(text, 'displayOutline');
-  gui.add(text, 'explode');
-  f1.add(text, 'speed');
-  f1.add(text, 'noiseStrength');
+var f1 = gui.addFolder('Food');
+f1.add(text, 'speed');
+f1.add(text, 'noiseStrength');
 
-  var f2 = gui.addFolder('Letters');
-  f2.add(text, 'growthSpeed');
-  f2.add(text, 'maxSize');
-  f2.add(text, 'message');
+var f2 = gui.addFolder('Condiment');
+f2.add(text, 'growthSpeed');
+f2.add(text, 'maxSize');
+f2.add(text, 'message');
 
-f2.open();
-};
+f1.open();
+
+
   
           
 /*
