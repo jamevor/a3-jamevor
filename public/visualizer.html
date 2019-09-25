@@ -67,7 +67,7 @@
       // load a resource
       loader.load(
         // resource URL
-        "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2FPancakeW_Syrup.obj?v=1569381893495",
+        "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpack%20de%20jus%20pindra%202.obj?v=1569382126864",
         // called when resource is loaded
         function ( object ) {
 
@@ -87,7 +87,7 @@
 
         }
       );
-      
+   
       
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
@@ -97,7 +97,11 @@
 			document.body.appendChild( renderer.domElement );
             var radius = 5;
             var height = 2;
-
+      
+      camera.position.z = 200;
+      
+      var controls = new THREE.OrbitControls(camera, render.domEl)
+/*
 			var geometry = new THREE.CylinderGeometry(0, radius, height, 2, 1)
       //var newGeometry = new THREE.
             var material = new THREE.MeshNormalMaterial();
@@ -142,6 +146,7 @@
 			};
 
 			animate();
+      */
 		</script>
 	</body>
 </html>
