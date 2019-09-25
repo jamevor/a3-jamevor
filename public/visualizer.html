@@ -55,9 +55,39 @@
   </div>
 </nav>
 </header>
+  
 	<body>
 		<script src="js/three.js"></script>
 		<script>
+    
+            // instantiate a loader
+      var loader = new THREE.OBJLoader();
+
+      // load a resource
+      loader.load(
+        // resource URL
+        'PancakePlain.obj',
+        // called when resource is loaded
+        function ( object ) {
+
+          scene.add( object );
+
+        },
+        // called when loading is in progresses
+        function ( xhr ) {
+
+          console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+
+        },
+        // called when loading has errors
+        function ( error ) {
+
+          console.log( 'An error happened' );
+
+        }
+      );
+      
+      
 			var scene = new THREE.Scene();
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
 
@@ -68,7 +98,7 @@
             var height = 2;
 
 			var geometry = new THREE.CylinderGeometry(0, radius, height, 2, 1)
-      var newGeometry = new THREE.
+      //var newGeometry = new THREE.
             var material = new THREE.MeshNormalMaterial();
             var pyramids = [];
             for(i = 0; i < 1; i++){
