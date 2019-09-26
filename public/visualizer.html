@@ -83,6 +83,11 @@
       var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
       keyLight.position.set(-100, 0, 100);
       
+      var drinkMaterials =
+          {
+            new THREE.MeshBasicMaterial( { map: new THREE.TextureLoader().load(), side: THREE.DoubleSide})
+          }
+      
       scene.add(keyLight);
       
                 // instantiate a loader
