@@ -199,16 +199,12 @@
       var f1 = gui.addFolder('Foods');
       
       
-      function removeEntity(objectName) {
-            var selectedObject = scene.getObjectByName(objectName);
-            scene.remove( selectedObject );
-            animate();
-        };
-      
+ 
       var obj = { Pancakes:function(){
-        removeEntity("waffles");
-        removeEntity("crepes");
+        
         if (pancakeModel !== null) {
+          GLTFobjects.remove(GLTFobjects.getObjectByName("cube"));
+          
           scene.add(pancakeModel);
         } 
         
