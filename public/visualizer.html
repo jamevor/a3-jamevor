@@ -95,43 +95,7 @@
       var material = new THREE.MeshPhongMaterial({texture: texture});
       
       
-                // instantiate a loader
-      var loader = new THREE.OBJLoader();
-      
-
-      // load a resource
-      loader.load(
-        // resource URL
-       // "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpack%20de%20jus%20pindra%202.obj?v=1569382126864",
-        "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpancake.obj?v=1569552524662",
-      //  "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fcroissant_01_col.obj?v=1569432139088",
-        // called when resource is loaded
-        function ( object ) {
-
-           // For any meshes in the model, add our material.
-          object.traverse( function ( node ) {
-
-            if ( node.isMesh ) {
-              node.material = material;
-            }
-            
-          } );
-          
-          scene.add( object );
-        },
-        // called when loading is in progresses
-        function ( xhr ) {
-
-          console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
-
-        },
-        // called when loading has errors
-        function ( error ) {
-
-          console.log( 'An error happened' );
-
-        }
-      );
+       
       
       var animate = function () {
         requestAnimationFrame( animate );
