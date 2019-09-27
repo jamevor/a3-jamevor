@@ -86,7 +86,8 @@
       var texture = new THREE.TextureLoader().load( "waffle.jpg" );
           texture.wrapS = THREE.RepeatWrapping;
           texture.wrapT = THREE.RepeatWrapping;
-          texture.repeat.set( 4, 4 );
+          texture.repeat.set( 1, 1 );
+      var material = new THREE.MeshPhongMaterial({map: texture});
       
       scene.add(keyLight);
       
@@ -98,12 +99,20 @@
       loader.load(
         // resource URL
         "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpack%20de%20jus%20pindra%202.obj?v=1569382126864",
-        "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fcroissant_01_col.obj?v=1569432139088",
+      //  "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fcroissant_01_col.obj?v=1569432139088",
         // called when resource is loaded
         function ( object ) {
 
-          scene.add( object );
+           // For any meshes in the model, add our material.
+          object.traverse( function ( node ) {
 
+            if ( node.isMesh ) {
+              node.material = material;
+            }
+            
+          } );
+          
+          scene.add( object );
         },
         // called when loading is in progresses
         function ( xhr ) {
@@ -136,13 +145,13 @@ var f2 = gui.addFolder('Condiment');
 
 var f3 = gui.addFolder('Help');      
       
-var obj = { add:function(){ console.log("clicked") }};
+var obj = { Pancakes:function(){ console.log("clicked") }};
 
 gui.add(obj,'Pancakes');
       
-var obj = { add:function(){ console.log("clicked") }};
+var obj2 = { Condiments:function(){ console.log("clicked") }};
 
-gui.add(obj,'Condiments');
+gui.add(obj2,'Condiments');
 
       
 f2.open();
