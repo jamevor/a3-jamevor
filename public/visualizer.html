@@ -135,6 +135,14 @@ var f1 = gui.addFolder('Foods');
 var f2 = gui.addFolder('Condiment');
 
 var f3 = gui.addFolder('Help');      
+      
+var obj = { add:function(){ console.log("clicked") }};
+
+gui.add(obj,'Pancakes');
+      
+var obj = { add:function(){ console.log("clicked") }};
+
+gui.add(obj,'Condiments');
 
       
 f2.open();
