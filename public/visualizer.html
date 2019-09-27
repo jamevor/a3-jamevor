@@ -96,7 +96,9 @@
       
       var loader = new THREE.GLTFLoader();
       
-      
+      var pancakeModel = null;
+      var waffleModel = null;
+      var crepeModel = null;
       
       loader.load(
       // resource URL
@@ -104,7 +106,7 @@
         // called when the resource is loaded
         function ( gltf ) {
 
-      //    scene.add( gltf.scene );
+         pancakeModel = gltf.scene;
 
           gltf.animations; // Array<THREE.AnimationClip>
           gltf.scene; // THREE.Scene
@@ -132,7 +134,7 @@
         // called when the resource is loaded
         function ( gltf ) {
 
-        //  scene.add( gltf.scene );
+          waffleModel.add( gltf.scene );
 
           gltf.animations; // Array<THREE.AnimationClip>
           gltf.scene; // THREE.Scene
@@ -152,9 +154,10 @@
           console.log( 'An error happened' );
         }
       );
-            loader.load(
+            
+      loader.load(
       // resource URL
-        'https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fcrepe.glb?v=1569560103641',
+        'https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fcrepe.glb?v=1569561402390',
         // called when the resource is loaded
         function ( gltf ) {
 
@@ -197,6 +200,7 @@
       
       var obj = { Pancakes:function(){ console.log("clicked") }};
       var obj2 = { Waffles:function(){ console.log("clicked") }};
+      var obj2 = { Crepes:function(){ console.log("clicked") }};
       f1.add(obj2,'Waffles');
       f1.add(obj,'Pancakes');
       
