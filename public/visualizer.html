@@ -108,6 +108,11 @@
 
          pancakeModel = gltf.scene;
           gtlf.name = "pancake";
+          gltf.animations; // Array<THREE.AnimationClip>
+		gltf.scene; // THREE.Scene
+		gltf.scenes; // Array<THREE.Scene>
+		gltf.cameras; // Array<THREE.Camera>
+		gltf.asset; // Object
 
         },
         
@@ -130,6 +135,11 @@
 
           waffleModel = gltf.scene; 
           gtlf.name = "waffle";
+          gltf.animations; // Array<THREE.AnimationClip>
+		gltf.scene; // THREE.Scene
+		gltf.scenes; // Array<THREE.Scene>
+		gltf.cameras; // Array<THREE.Camera>
+		gltf.asset; // Object
 
         },
         
@@ -151,6 +161,11 @@
 
           crepeModel = gltf.scene;
           gtlf.name = "crepe";
+          gltf.animations; // Array<THREE.AnimationClip>
+		gltf.scene; // THREE.Scene
+		gltf.scenes; // Array<THREE.Scene>
+		gltf.cameras; // Array<THREE.Camera>
+		gltf.asset; // Object
 
         },
         
@@ -221,18 +236,24 @@
       f1.add(obj3,'Crepes');
       
 
-      var f2 = gui.addFolder('Toppings');
+      var f2 = gui.addFolder('Flavor');
 
       
-      var obj3 = { Butter:function(){ 
-        f
-         console.log(Object.getOwnPropertyNames(waffleModel));
-        currentModel.background = new THREE.Color( 'skyblue' );
-      
+      var obj3 = { Chocolate:function(){ 
+         console.log(Object.getOwnPropertyNames(currentModel));
+          ambientLight.color = new THREE.Color( 'darkbrow3n' );
       }};
-      var obj4 = {Syrup:function(){ console.log("clicked") }};
-      f2.add(obj3,'Butter');
-      f2.add(obj4,'Syrup');
+      var obj4 = {Plain:function(){
+        ambientLight.color = new THREE.Color( 0xFFFFFF); 
+      }};
+      
+      
+      var obj5 = {Blueberry:function(){
+        ambientLight.color = new THREE.Color( 'blue' ); 
+      }};
+      f2.add(obj3,'Chocolate');
+      f2.add(obj4,'Plain');
+      f2.add(obj5,'Blueberry');
 
       var f3 = gui.addFolder('Help');
       var obj5 = {Instructions:function(){ console.log("clicked") }};
