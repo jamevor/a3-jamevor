@@ -61,7 +61,8 @@
 </nav>
 </header>
 <body>
-	<div id="gui">  
+  
+	<div class="controls" id="controls">  
 
   </div>
 		
@@ -97,7 +98,8 @@
       
       loader.load(
         // resource URL
-        'https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpancake.glb?v=1569554379174',
+      //  'https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpancake.glb?v=1569554379174',
+        'https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fwaffle.glb?v=1569557723572',
         // called when the resource is loaded
         function ( gltf ) {
 
@@ -129,29 +131,29 @@
       
       animate();
       
- 
-var gui = new dat.GUI({ autoPlace: false });
-      
-var customContainer = document.getElementById('gui');
-customContainer.appendChild(gui.domElement);
 
-var f1 = gui.addFolder('Foods');
+      var gui = new dat.GUI({ autoPlace: false });
 
-var f2 = gui.addFolder('Condiment');
+      var customContainer = document.getElementById('controls');
+      customContainer.appendChild(gui.domElement);
 
-var f3 = gui.addFolder('Help');      
-      
-var obj = { Pancakes:function(){ console.log("clicked") }};
+      var f1 = gui.addFolder('Foods');
 
-gui.add(obj,'Pancakes');
-      
-var obj2 = { Condiments:function(){ console.log("clicked") }};
+      var f2 = gui.addFolder('Condiment');
 
-gui.add(obj2,'Condiments');
+      var f3 = gui.addFolder('Help');      
 
-      
-f2.open();
-      
+      var obj = { Pancakes:function(){ console.log("clicked") }};
+
+      gui.add(obj,'Pancakes');
+
+      var obj2 = { Condiments:function(){ console.log("clicked") }};
+
+      gui.add(obj2,'Condiments');
+
+
+      f2.open();
+
     
 		</script>
 	</body>
