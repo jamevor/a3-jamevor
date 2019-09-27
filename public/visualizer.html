@@ -107,12 +107,6 @@
         function ( gltf ) {
 
          pancakeModel = gltf.scene;
-
-          gltf.animations; // Array<THREE.AnimationClip>
-          gltf.scene; // THREE.Scene
-          gltf.scenes; // Array<THREE.Scene>
-          gltf.cameras; // Array<THREE.Camera>
-          gltf.asset; // Object
           gtlf.name = "pancake";
 
         },
@@ -135,12 +129,6 @@
         function ( gltf ) {
 
           waffleModel = gltf.scene; 
-
-          gltf.animations; // Array<THREE.AnimationClip>
-          gltf.scene; // THREE.Scene
-          gltf.scenes; // Array<THREE.Scene>
-          gltf.cameras; // Array<THREE.Camera>
-          gltf.asset; // Object
           gtlf.name = "waffle";
 
         },
@@ -162,12 +150,6 @@
         function ( gltf ) {
 
           crepeModel = gltf.scene;
-
-          gltf.animations; // Array<THREE.AnimationClip>
-          gltf.scene; // THREE.Scene
-          gltf.scenes; // Array<THREE.Scene>
-          gltf.cameras; // Array<THREE.Camera>
-          gltf.asset; // Object
           gtlf.name = "crepe";
 
         },
@@ -199,27 +181,38 @@
       var f1 = gui.addFolder('Foods');
       
       
- 
+     var currentModel = null;
+      
       var obj = { Pancakes:function(){
         
         if (pancakeModel !== null) {
-          GLTFobjects.remove(GLTFobjects.getObjectByName("cube"));
-          
+          scene.remove(waffleModel);
+          scene.remove(crepeModel);
+          scene.remove(pancakeModel);
           scene.add(pancakeModel);
+          currentModel = pancakeModel;
         } 
         
       }};
       
       var obj2 = { Waffles:function(){
         if (waffleModel !== null) {
+          scene.remove(pancakeModel);
+          scene.remove(crepeModel);
+          scene.remove(waffleModel);
           scene.add(waffleModel);
+          currentModel = waffleModel;
         }
       }};
       
       
       var obj3 = { Crepes:function(){
         if (crepeModel !== null) {
+          scene.remove(waffleModel);
+          scene.remove(pancakeModel);
+          scene.remove(crepeModel);
           scene.add(crepeModel);
+          currentModel = crepeModel;
         }
       }};
       
@@ -231,7 +224,12 @@
       var f2 = gui.addFolder('Toppings');
 
       
-      var obj3 = { Butter:function(){ console.log("clicked") }};
+      var obj3 = { Butter:function(){ 
+        f
+         console.log(Object.getOwnPropertyNames(waffleModel));
+        currentModel.background = new THREE.Color( 'skyblue' );
+      
+      }};
       var obj4 = {Syrup:function(){ console.log("clicked") }};
       f2.add(obj3,'Butter');
       f2.add(obj4,'Syrup');
