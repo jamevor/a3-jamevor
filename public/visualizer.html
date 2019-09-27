@@ -83,13 +83,17 @@
       var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
       keyLight.position.set(-100, 0, 100);
       
+      var ambientLight = new THREE.AmbientLight(0xFFFFFF, 0.2);
+      
+      scene.add(keyLight);
+      scene.add(ambientLight);
+      
       var texture = new THREE.TextureLoader().load( "waffle.jpg" );
           texture.wrapS = THREE.RepeatWrapping;
           texture.wrapT = THREE.RepeatWrapping;
-          texture.repeat.set( 1, 1 );
-      var material = new THREE.MeshPhongMaterial({map: texture});
+          texture.repeat.set( 4, 4 );
+      var material = new THREE.MeshPhongMaterial({texture: texture});
       
-      scene.add(keyLight);
       
                 // instantiate a loader
       var loader = new THREE.OBJLoader();
@@ -98,7 +102,8 @@
       // load a resource
       loader.load(
         // resource URL
-        "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpack%20de%20jus%20pindra%202.obj?v=1569382126864",
+       // "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpack%20de%20jus%20pindra%202.obj?v=1569382126864",
+        "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2FPancakePlain.obj?v=1569381883900",
       //  "https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fcroissant_01_col.obj?v=1569432139088",
         // called when resource is loaded
         function ( object ) {
