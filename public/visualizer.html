@@ -60,9 +60,9 @@
   </div>
 </nav>
 </header>
-  
-	  <div class="gui">  
-      
+<body>
+	<div id="gui">  
+
   </div>
 		
 		<script>
@@ -132,7 +132,7 @@
  
 var gui = new dat.GUI({ autoPlace: false });
       
-var customContainer = document.getElementById('my-gui-container');
+var customContainer = document.getElementById('gui');
 customContainer.appendChild(gui.domElement);
 
 var f1 = gui.addFolder('Foods');
