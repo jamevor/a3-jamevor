@@ -97,7 +97,15 @@
       var loader = new THREE.GLTFLoader();
       
       loader.load(
-        // resource URL
+      // resource URL
+      //  'https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpancake.glb?v=1569554379174',
+        'https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fwaffle.glb?v=1569557723572',
+        // called when the resource is loaded
+      
+      var loader = new THREE.GLTFLoader();
+      
+      loader.load(
+      // resource URL
       //  'https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpancake.glb?v=1569554379174',
         'https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fwaffle.glb?v=1569557723572',
         // called when the resource is loaded
@@ -140,24 +148,24 @@
       var f1 = gui.addFolder('Foods');
       
       var obj = { Pancakes:function(){ console.log("clicked") }};
-      var obj2 = { Pancakes:function(){ console.log("clicked") }};
-      f1.add(obj,'Waffles');
+      var obj2 = { Waffles:function(){ console.log("clicked") }};
+      f1.add(obj2,'Waffles');
       f1.add(obj,'Pancakes');
-      
-      
-      
       
 
       var f2 = gui.addFolder('Toppings');
+      var obj3 = { Butter:function(){ console.log("clicked") }};
+      var obj4 = {Syrup:function(){ console.log("clicked") }};
+      f2.add(obj3,'Butter');
+      f2.add(obj4,'Syrup');
 
-      var f3 = gui.addFolder('Help');      
-
-      var obj2 = { Condiments:function(){ console.log("clicked") }};
+      var f3 = gui.addFolder('Help');
       
-     gui.add(obj2,'Condiments');
+
+      
 
 
-      f2.open();
+    
 
     
 		</script>
