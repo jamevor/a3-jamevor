@@ -58,7 +58,7 @@
   
 	<body>
 		<script src="js/three.js"></script>
-    <script src="js/obj.js"></script>
+    <script src="js/GLTFLoader.js"></script>
     <script src="js/orbControls.js"></script>
     <script type="text/javascript" src="js/dat.gui.js"></script>
 		<script>
@@ -94,7 +94,33 @@
           texture.repeat.set( 4, 4 );
       var material = new THREE.MeshPhongMaterial({texture: texture});
       
+      var loader = new THREE.GLTFLoader();
       
+      loader.load(
+        // resource URL
+        'https://cdn.glitch.com/6e01319e-6ca6-47f7-9b4e-aaca43f9cc11%2Fpancake.glb?v=1569554379174',
+        // called when the resource is loaded
+        function ( gltf ) {
+
+          scene.add( gltf.scene );
+
+          gltf.animations; // Array<THREE.AnimationClip>
+          gltf.scene; // THREE.Scene
+          gltf.scenes; // Array<THREE.Scene>
+          gltf.cameras; // Array<THREE.Camera>
+          gltf.asset; // Object
+
+        },
+        
+        // called while loading is progressing
+        function ( xhr ) {
+          console.log( ( xhr.loaded / xhr.total * 100 ) + '% loaded' );
+        },
+        // called when loading has errors
+        function ( error ) {
+          console.log( 'An error happened' );
+        }
+      );
        
       
       var animate = function () {
