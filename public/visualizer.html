@@ -138,18 +138,23 @@
       customContainer.appendChild(gui.domElement);
 
       var f1 = gui.addFolder('Foods');
+      
+      var obj = { Pancakes:function(){ console.log("clicked") }};
+      var obj2 = { Pancakes:function(){ console.log("clicked") }};
+      f1.add(obj,'Waffles');
+      f1.add(obj,'Pancakes');
+      
+      
+      
+      
 
-      var f2 = gui.addFolder('Condiment');
+      var f2 = gui.addFolder('Toppings');
 
       var f3 = gui.addFolder('Help');      
 
-      var obj = { Pancakes:function(){ console.log("clicked") }};
-
-      gui.add(obj,'Pancakes');
-
       var obj2 = { Condiments:function(){ console.log("clicked") }};
-
-      gui.add(obj2,'Condiments');
+      
+     gui.add(obj2,'Condiments');
 
 
       f2.open();
