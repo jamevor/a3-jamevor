@@ -134,7 +134,7 @@
         // called when the resource is loaded
         function ( gltf ) {
 
-          waffleModel.add( gltf.scene );
+          waffleModel = gltf.scene; 
 
           gltf.animations; // Array<THREE.AnimationClip>
           gltf.scene; // THREE.Scene
@@ -161,7 +161,7 @@
         // called when the resource is loaded
         function ( gltf ) {
 
-          scene.add( gltf.scene );
+          crepeModel = gltf.scene;
 
           gltf.animations; // Array<THREE.AnimationClip>
           gltf.scene; // THREE.Scene
@@ -198,14 +198,43 @@
 
       var f1 = gui.addFolder('Foods');
       
-      var obj = { Pancakes:function(){ console.log("clicked") }};
-      var obj2 = { Waffles:function(){ console.log("clicked") }};
-      var obj2 = { Crepes:function(){ console.log("clicked") }};
+      
+      function removeEntity(objectName) {
+            var selectedObject = scene.getObjectByName(objectName);
+            scene.remove( selectedObject );
+            animate();
+        };
+      
+      var obj = { Pancakes:function(){
+        removeEntity("waffles");
+        removeEntity("crepes");
+        if (pancakeModel !== null) {
+          scene.add(pancakeModel);
+        } 
+        
+      }};
+      
+      var obj2 = { Waffles:function(){
+        if (waffleModel !== null) {
+          scene.add(waffleModel);
+        }
+      }};
+      
+      
+      var obj3 = { Crepes:function(){
+        if (crepeModel !== null) {
+          scene.add(crepeModel);
+        }
+      }};
+      
       f1.add(obj2,'Waffles');
       f1.add(obj,'Pancakes');
+      f1.add(obj3,'Crepes');
       
 
       var f2 = gui.addFolder('Toppings');
+
+      
       var obj3 = { Butter:function(){ console.log("clicked") }};
       var obj4 = {Syrup:function(){ console.log("clicked") }};
       f2.add(obj3,'Butter');
