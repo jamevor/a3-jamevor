@@ -59,6 +59,7 @@
       </li>
     </ul>
   </div>
+    <button onclick="myFunction()">Click me</button>
 </nav>
 </header>
 <body>
@@ -261,6 +262,10 @@
       var f3 = gui.addFolder('Help');
       var obj5 = {Instructions:function(){ console.log("clicked") }};
       f3.add(obj5,'Instructions');
+      
+      function myFunction() {
+      document.getElementById("demo").innerHTML = "Hello World";
+        }
       
     
 		</script>
