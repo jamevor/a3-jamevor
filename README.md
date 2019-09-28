@@ -14,6 +14,11 @@ I used JSHINT online linter. Many of the settings enabled
 the application 
 
 
+Tech Achievement 1: My visualizer loads in multiple images
+Tech Achievement 2: I used modules to affect the camera of my visulization
+
+Design Achievement 1: The background of the loader was amde white instead of black becasue users thought white would be more inviting to customers
+Design Achievement 2: I followed best practices for accessibility, including providing alt attributes for images and using semantic HTML. There are no <div> or <span> elements in my document.
 
 
 
