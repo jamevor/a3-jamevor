@@ -1,14 +1,11 @@
-import * as T from './js/three.js';
-
-export function myFunction(camera, renderer) {
-   new T.OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
-      controls.campingFactor = 0.25;
-      controls.enableZoom = true;
-  return 
+export function setUpOrbitalControls(camera, renderer, controls) {
+  var controls = new THREE.OrbitControls(camera, renderer.domElement);
+  controls.enableDamping = true;
+  controls.campingFactor = 0.25;
+  controls.enableZoom = true;
+  return controls;
 }
 
-export function myFunction2() {
-  console.log(5 + 6);
+export function makeSceneBackgroundWhite(renderer) {
+      renderer.setClearColor( 0xffffff, 0);
 }
-

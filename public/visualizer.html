@@ -16,6 +16,7 @@
     <script src="js/orbControls.js"></script>
     <script type="text/javascript" src="js/dat.gui.js"></script>
     <script type="module" src="js/module1.js"></script>
+    <script type="module" src="js/module2.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
 
@@ -59,8 +60,6 @@
       </li>
     </ul>
   </div>
-    <p id="demo"></p>
-    <button onclick="myFunction()">Click me</button>
 </nav>
 </header>
 <body>
@@ -71,7 +70,9 @@
 		
 		<script type="module">
       
-      import { myFunction, myFunction2 } from './js/module1.js';
+      import { setUpOrbitalControls, makeSceneBackgroundWhite } from './js/module1.js';
+      import { createGUIInDiv } from './js/module2.js';
+      
       
       alert('Hello! Welcome to the Doughboyz visualizer. In this interface you can interact wiith certain menu items and choose the toppings you would like to see on your order. In the menu on the left of the screen you can select the item you would like and see what toppings you can put on it. If you need to see the instructons again you can click the help button at the bottom of the page.');
 
@@ -79,7 +80,8 @@
 			var camera = new THREE.PerspectiveCamera( 75, window.innerWidth/window.innerHeight, 0.1, 1000 );
 
 			var renderer = new THREE.WebGLRenderer({ alpha: true });
-      renderer.setClearColor( 0xffffff, 0);
+      makeSceneBackgroundWhite(renderer);
+      
 			renderer.setSize( window.innerWidth, window.innerHeight );
 			document.body.appendChild( renderer.domElement );
             var radius = 5;
@@ -87,11 +89,8 @@
       
       camera.position.z = 200;
       
-      var controls = new THREE.OrbitControls(camera, renderer.domElement);
-      controls.enableDamping = true;
-      controls.campingFactor = 0.25;
-      controls.enableZoom = true;
-      
+      var controls = setUpOrbitalControls(camera, renderer, controls);
+
       var keyLight = new THREE.DirectionalLight(new THREE.Color('hsl(30, 100%, 75%)'), 1.0);
       keyLight.position.set(-100, 0, 100);
       
@@ -194,10 +193,7 @@
       animate();
       
 
-      var gui = new dat.GUI({ autoPlace: false });
-
-      var customContainer = document.getElementById('controls');
-      customContainer.appendChild(gui.domElement);
+      var gui = createGUIInDiv('controls');
 
       var f1 = gui.addFolder('Foods');
       
@@ -246,7 +242,6 @@
 
       
       var obj3 = { Chocolate:function(){ 
-         console.log(Object.getOwnPropertyNames(currentModel));
           ambientLight.color = new THREE.Color( 0x654321 );
       }};
       var obj4 = {Plain:function(){
@@ -264,6 +259,7 @@
       var f3 = gui.addFolder('Help');
       var obj5 = {Instructions:function(){ console.log("clicked") }};
       f3.add(obj5,'Instructions');
+      
       
       
     
