@@ -6,7 +6,7 @@ export function createGUIInDiv(div) {
   return gui;
 }
 
-export function myFunction() {
-  console.log(5 + 6);
+export function existsModel(model) {
+  return model !== null;
 }
 

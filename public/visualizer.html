@@ -71,7 +71,7 @@
 		<script type="module">
       
       import { setUpOrbitalControls, makeSceneBackgroundWhite } from './js/module1.js';
-      import { createGUIInDiv } from './js/module2.js';
+      import { createGUIInDiv, existsModel } from './js/module2.js';
       
       
       alert('Hello! Welcome to the Doughboyz visualizer. In this interface you can interact wiith certain menu items and choose the toppings you would like to see on your order. In the menu on the left of the screen you can select the item you would like and see what toppings you can put on it. If you need to see the instructons again you can click the help button at the bottom of the page.');
@@ -202,7 +202,7 @@
       
       var obj = { Pancakes:function(){
         
-        if (pancakeModel !== null) {
+        if (existsModel(pancakeModel)) {
           scene.remove(waffleModel);
           scene.remove(crepeModel);
           scene.remove(pancakeModel);
@@ -213,7 +213,7 @@
       }};
       
       var obj2 = { Waffles:function(){
-        if (waffleModel !== null) {
+        if (existsModel(waffleModel)) {
           scene.remove(pancakeModel);
           scene.remove(crepeModel);
           scene.remove(waffleModel);
@@ -224,7 +224,7 @@
       
       
       var obj3 = { Crepes:function(){
-        if (crepeModel !== null) {
+        if (existsModel(crepeModel)) {
           scene.remove(waffleModel);
           scene.remove(pancakeModel);
           scene.remove(crepeModel);
@@ -257,10 +257,13 @@
       f2.add(obj5,'Blueberry');
 
       var f3 = gui.addFolder('Help');
-      var obj5 = {Instructions:function(){ console.log("clicked") }};
+      
+       function instructions(){
+        alert("In this interface you can interact wiith certain menu items and choose the toppings you would like to see on your order. In the menu on the left of the screen you can select the item you would like and see what toppings you can put on it. If you need to see the instructons again you can click the help button at the bottom of the page.');")
+      }
+      
+      var obj5 = {Instructions:function(){ instructions() }};
       f3.add(obj5,'Instructions');
-      
-      
       
     
 		</script>
