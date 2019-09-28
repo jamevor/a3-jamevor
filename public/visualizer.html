@@ -15,7 +15,7 @@
     <script src="js/GLTFLoader.js"></script>
     <script src="js/orbControls.js"></script>
     <script type="text/javascript" src="js/dat.gui.js"></script>
-    <script type="module" src="./module1.js"></script>
+    <script type="module" src="js/module1.js"></script>
     <link rel="stylesheet" type="text/css" href="css/style.css">
   </head>
 
@@ -69,7 +69,9 @@
 
   </div>
 		
-		<script>
+		<script type="module">
+      
+      import { myFunction, myFunction2 } from './js/module1.js';
       
       alert('Hello! Welcome to the Doughboyz visualizer. In this interface you can interact wiith certain menu items and choose the toppings you would like to see on your order. In the menu on the left of the screen you can select the item you would like and see what toppings you can put on it. If you need to see the instructons again you can click the help button at the bottom of the page.');
 
