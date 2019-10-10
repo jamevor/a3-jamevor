@@ -28,7 +28,7 @@ var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
     user: 'doughboys.official@gmail.com',
-    pass: 'Webware2020'
+    pass: 'sbccoqpxypofikrc'
   }
 });
 var c = new TMClient('tyronepatterson', 'hzJCSbcoqMwuslfzUhRRuVQRYFROOo');
