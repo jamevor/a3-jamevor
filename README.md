@@ -1,11 +1,12 @@
-https://a4-jamevor.glitch.me/
+https://glitch.com/~fp-jamevor-tpatterson
 Justin Amevor
 Tyrone Patterson
 Doughboyz Catering
 
 The goal of this application is for customers to order foods form the app. Customers can place an order and also use the 
-visualizer to see what there order would look like with different condiments. To fully use the site you should login 
-by first signing up by making a username and password.
+visualizer to see what there order would look like with different condiments. 
+
+To fully use the site you should login by first signing up by making a username and password.
 
 Technologies Used:
 Three.js-Justin
