@@ -90,22 +90,13 @@ app.post('/submit', function(req, res) {
    db.get('data')
      .push(clientData)
      .write();
-  // nexmo.message.sendSms(
-  // '15043755611', req.body.num, message,
-  //   (err, responseData) => {
-  //     if (err) {
-  //       console.log(err);
-  //     } else {
-  //       console.dir(responseData);
-  //     }
-  //   }
-  // );
-  c.Messages.send({
-    text: message,
-    phones: req.body.num
-  }, function(err, res) {
-    console.log('Messages.send()', err, res);
-  });
+  
+  // c.Messages.send({
+  //   text: message,
+  //   phones: req.body.num
+  // }, function(err, res) {
+  //   console.log('Messages.send()', err, res);
+  // });
 });
 
 app.post('/delete', function(req, res) {
