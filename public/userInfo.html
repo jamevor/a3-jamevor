@@ -80,9 +80,6 @@
         <div class="mb-3">
           <label for="email">Email </label>
           <input type="email" class="form-control" id="umail" placeholder="you@example.com">
-          <div class="invalid-feedback">
-            Please enter a valid email address for shipping updates.
-          </div>
         </div>
 
         <div class="mb-3">
@@ -95,18 +92,18 @@
             <label for="country">Order Confirmation</label>
             <select class="custom-select d-block w-100" id="uconfirmation" required>
               <option value="">Choose...</option>
-              <option>Text</option>
-              <option>Email</option>
+              <option id="utext"> Text</option>
+              <option id="uemail"> Email</option>
             </select>
           </div>
           <div class="col-md-4 mb-3">
             <label for="state">Condiment</label>
             <select class="custom-select d-block w-100" id="ucondiment" required>
               <option value="">Choose...</option>
-              <option value="">Syrup</option>
-              <option value="">Blueberries </option>
-              <option value="">Butter</option>
-              <option value="">Strawberries</option>
+              <option id="Syru">Syrup</option>
+              <option id="blu">Blueberries </option>
+              <option id="butt">Butter</option>
+              <option id="str">Strawberries</option>
             </select>
           </div>
           <div class="col-md-3 mb-3">
@@ -117,7 +114,7 @@
 
 
         <hr class="mb-4">
-        <button class="btn btn-primary btn-lg btn-block" type="submit">Submit</button>
+        <button class="btn btn-primary btn-lg btn-block" id="buttonSubmit" type="submit">Submit</button>
       </form>
     </div>
   </div>
@@ -149,29 +146,6 @@
     </table>
 
     <br><br>
-    
-    
-    <b>Add Order:</b> <br>
- <div class= "ordering">
-    <form action="">
-      Name: <input type="text" id="uname"> <br>
-      Phone Number (1xxxxxxxxxx): <input type="text" id="unum"> <br>
-      Email: <input type="text" id="umail"> <br>
-      Address: <input type="text" id="uaddress"> <br>
-      Order: <input type="text" id="uorder"> <br>
-      Condiment: <input type="text" id="ucondiment"> <br>
-      Aditional Information: <input type="text" id="uaddinfo"> <br>
-      <form>
-        How will recieve your order confirmation?
-        <input type="radio" name="options" id="utext" checked>Text
-        <input type="radio" name="options" id="uemail">Email
-      </form>
-
-      <button id="buttonSubmit">Submit</button>
-      
-    </form>
-    <br><br>
-      </div>
 
     <div class= "modify">
       
