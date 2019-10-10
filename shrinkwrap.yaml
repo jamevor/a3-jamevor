@@ -14,7 +14,6 @@ dependencies:
   helmet: 3.21.0
   jquery: 3.4.1
   jshint: 2.10.2
-  linter: 0.0.7
   lowdb: 1.0.0
   method-override: 3.0.0
   mime: 2.4.4
@@ -44,12 +43,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-TXtUUEYHuaTEbLZWIKUr5pmBuhDLy+8KYtPYdcV8qC+pOZL+NKqYwvWSRrVXHn+ZmRRAu8vJTAznH7Oag6RVRw==
-  /argsparser/0.0.7:
-    dev: false
-    engines:
-      node: '>= 0.2.0'
-    resolution:
-      integrity: sha1-QcheDD3nV7NQ8S5u0OSQsegtvgY=
   /array-flatten/1.1.1:
     dev: false
     resolution:
@@ -173,10 +166,6 @@ packages:
       node: '>= 0.8'
     resolution:
       integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==
-  /commander/2.20.0:
-    dev: false
-    resolution:
-      integrity: sha512-7j2y+40w61zy6YC2iRNpUe/NwhNyoXrYpHMrSunaMG64nRnaf96zO/KMQR4OyN/UnE5KLyEBnKHd4aG3rskjpQ==
   /compressible/2.0.17:
     dependencies:
       mime-db: 1.41.0
@@ -902,17 +891,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-YHlZCB6lMTllWDtSPHz/ZXTsi8S00usEV6v1tjq8tOUZzw7DpSDWVXjXDre6ed1w/pd495ODpHZYSdkRTsa0HA==
-  /linter/0.0.7:
-    dependencies:
-      argsparser: 0.0.7
-      sharedjs: 0.0.2
-    dev: false
-    engines:
-      node: '>= 0.3.6'
-    hasBin: true
-    requiresBuild: true
-    resolution:
-      integrity: sha1-rI+SBaznCdvFAGrB54IgfXlYo24=
   /lodash.includes/4.3.0:
     dev: false
     resolution:
@@ -1331,16 +1309,6 @@ packages:
     dev: false
     resolution:
       integrity: sha512-JvdAWfbXeIGaZ9cILp38HntZSFSo3mWg6xGcJJsd+d4aRMOqauag1C63dJfDw7OaMYwEbHMOxEZ1lqVRYP2OAw==
-  /sharedjs/0.0.2:
-    dependencies:
-      argsparser: 0.0.7
-      uglify-js: 3.6.0
-    dev: false
-    engines:
-      node: '>= 0.3.0'
-    hasBin: true
-    resolution:
-      integrity: sha1-xf2ySjVVoFD6PIVAprt605MQJ8Y=
   /shelljs/0.3.0:
     dev: false
     engines:
@@ -1356,12 +1324,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-VusCfWW00tzmyy4tMsTUr8nh1wc=
-  /source-map/0.6.1:
-    dev: false
-    engines:
-      node: '>=0.10.0'
-    resolution:
-      integrity: sha512-UjgapumWlbMhkBgzT7Ykc5YXUT46F0iKu8SGXq0bcwP5dz/h0Plj6enJqjz1Zbq2l5WaqYnrVbwWOWMyF3F47g==
   /sshpk/1.16.1:
     dependencies:
       asn1: 0.2.4
@@ -1436,16 +1398,6 @@ packages:
       node: '>= 0.6'
     resolution:
       integrity: sha512-TkRKr9sUTxEH8MdfuCSP7VizJyzRNMjj2J2do2Jr3Kym598JVdEksuzPQCnlFPW4ky9Q+iA+ma9BGm06XQBy8g==
-  /uglify-js/3.6.0:
-    dependencies:
-      commander: 2.20.0
-      source-map: 0.6.1
-    dev: false
-    engines:
-      node: '>=0.8.0'
-    hasBin: true
-    resolution:
-      integrity: sha512-W+jrUHJr3DXKhrsS7NUVxn3zqMOFn0hL/Ei6v0anCIMoKC93TjcflTagwIHLW7SfMFfiQuktQyFVCFHGUE0+yg==
   /uid-safe/2.1.5:
     dependencies:
       random-bytes: 1.0.0
@@ -1553,7 +1505,6 @@ specifiers:
   helmet: ^3.21.0
   jquery: ^3.4.1
   jshint: ^2.10.2
-  linter: ^0.0.7
   lowdb: ^1.0.0
   method-override: ^3.0.0
   mime: ^2.4.4

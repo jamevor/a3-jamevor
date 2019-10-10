@@ -22,7 +22,10 @@ var uuid = require('uuid'); // random number generation
 var bcrypt = require('bcryptjs'); // crypto functions!
 var LocalStrategy   = require('passport-local').Strategy;
 var db_pw = low(new FileSync(path.join('data', 'pw.json')));
-var nexmo = 
+var nexmo = new Nexmo({
+  apiKey: "06a457ea",
+  apiSecret: "ijme0mQXL0SdKxBr"
+})
 
 db_pw.defaults({
   "users": []
@@ -85,6 +88,16 @@ app.post('/submit', function(req, res) {
    db.get('data')
      .push(clientData)
      .write();
+  nexmo.message.sendSms(
+  '15043755611', '15083710400', message,
+    (err, responseData) => {
+      if (err) {
+        console.log(err);
+      } else {
+        console.dir(responseData);
+      }
+    }
+  );
 });
 
 app.post('/delete', function(req, res) {
