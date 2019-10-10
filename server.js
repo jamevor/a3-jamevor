@@ -66,7 +66,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // app.get('/fullOrders.json', (req, res) => res.send(JSON.stringify(data)));
-app.get('/fullOrders.json', (req, res) => { res.send( db.value()) });
+app.get('/fullOrders.json', (req, res) => { res.send( db.value()), console.log(db.value())});
 
 
 app.get('/userOrders.json', (req, res) => { 

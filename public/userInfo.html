@@ -99,11 +99,11 @@
           <div class="col-md-4 mb-3">
             <label for="condiment">Condiment</label>
             <select class="custom-select d-block w-100" id="ucondiment" required>
-              <option name="con" value="">Choose...</option>
-              <option name="con" value="Syrup">Syrup</option>
-              <option name="con" value="Blueberries">Blueberries </option>
-              <option name="con" value="Butter">Butter</option>
-              <option name="con" value="Strawberries">Strawberries</option>
+              <option selected="selected" value="">Choose...</option>
+              <option value="Syrup">Syrup</option>
+              <option value="Blueberries">Blueberries </option>
+              <option value="Butter">Butter</option>
+              <option value="Strawberries">Strawberries</option>
             </select>
           </div>
           <div class="col-md-3 mb-3">
@@ -218,7 +218,7 @@
                    mail: umail.value,
                    address: uaddress.value, 
                    order: uorder.value, 
-                   condiment: getRadioVal(document.getElementById('orderForm'), "con"), 
+                   condiment: $('#ucondiment').find("option:selected").text(),
                    addinfo:   uaddinfo.value,
                    method: umethod
                  },
