@@ -47,6 +47,7 @@
             <tr>
                 <th>Order ID</th>
                 <th>Username</th>
+                <th>Phone Number</th>
                 <th>Name</th>
                 <th>Address</th>
                 <th>Order</th>
@@ -62,7 +63,7 @@
  <div class= "ordering">
     <form action="">
       Name: <input type="text" id="uname"> <br>
-      Phone Number: <input type="text" id="uname"> <br>
+      Phone Number (+1xxxxxxxxxx): <input type="text" id="unum"> <br>
       Address: <input type="text" id="uaddress"> <br>
       Order: <input type="text" id="uorder"> <br>
       Condiment: <input type="text" id="ucondiment"> <br>
@@ -90,6 +91,7 @@
        <b>Modify Order:</b> <br>
          Order ID: <input type="text" id="modID"> <br>
         <label><input type="radio" name="column" value="nam" checked /> Name</label>
+        <label><input type="radio" name="column" value="num" /> Phone number</label>
         <label><input type="radio" name="column" value="add" /> Address</label>
         <label><input type="radio" name="column" value="ord" /> Order</label>
         <label><input type="radio" name="column" value="con" /> Condiment</label> 
@@ -108,11 +110,13 @@
     e.preventDefault()
 
      uname = document.querySelector( '#uname' ),
+     unum = document.querySelector(  '#unum' ),
      uaddress = document.querySelector( '#uaddress' ),
      uorder = document.querySelector( '#uorder'),
      ucondiment = document.querySelector( '#ucondiment' ),
      uaddinfo = document.querySelector( '#uaddinfo' ),
           json = { name: uname.value, 
+                   num: unum.value,
                    address: uaddress.value, 
                    order: uorder.value, 
                    condiment: ucondiment.value, 

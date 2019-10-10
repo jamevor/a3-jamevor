@@ -79,8 +79,8 @@ app.post('/submit', function(req, res) {
     return;
   }
   let clientData = Object.values(req.body);
-  let message = "Hello "+  clientData[0] + ", your order of " + clientData[2] + " will be ready in exactly 30 seconds."
-  clientData[5] = message;
+  let message = "Hello "+  clientData[0] + ", your order of " + clientData[3] + " will be ready in exactly 30 seconds."
+  clientData[6] = message;
   let idcount = db.get('idcount').value();
   clientData.unshift(req.user.username);
   clientData.unshift(idcount.toString());
@@ -135,16 +135,18 @@ app.post('/modify', function(req, res) {
     switch(modifyColumn) {
       case "nam":
         entryToModify[2] = newData; break;
-      case "add":
+      case "num":
         entryToModify[3] = newData; break;
-      case "ord":
+      case "add":
         entryToModify[4] = newData; break;
-      case "con":
+      case "ord":
         entryToModify[5] = newData; break;
-      case "inf":
+      case "con":
         entryToModify[6] = newData; break;
-      case "mes":
+      case "inf":
         entryToModify[7] = newData; break;
+      case "mes":
+        entryToModify[8] = newData; break;
     }
     db.get('data')
       .filter(clientRow => clientRow[0] == modifyID && clientRow[1] == req.user.username)
