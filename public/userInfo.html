@@ -49,7 +49,7 @@
 
     <div class="col-md-8 order-md-1">
       
-      <form class="needs-validation" novalidate>
+      <form class="needs-validation" novalidate action="" id="orderForm">
         <div class="row">
           <div class="col-md-6 mb-3">
             <label for="firstName">Name</label>
@@ -97,13 +97,13 @@
             </select>
           </div>
           <div class="col-md-4 mb-3">
-            <label for="state">Condiment</label>
+            <label for="condiment">Condiment</label>
             <select class="custom-select d-block w-100" id="ucondiment" required>
-              <option value="">Choose...</option>
-              <option id="Syru">Syrup</option>
-              <option id="blu">Blueberries </option>
-              <option id="butt">Butter</option>
-              <option id="str">Strawberries</option>
+              <option name="con" value="">Choose...</option>
+              <option name="con" value="Syrup">Syrup</option>
+              <option name="con" value="Blueberries">Blueberries </option>
+              <option name="con" value="Butter">Butter</option>
+              <option name="con" value="Strawberries">Strawberries</option>
             </select>
           </div>
           <div class="col-md-3 mb-3">
@@ -179,6 +179,21 @@
     </div>
 
     <script>
+           function getRadioVal(form, name) {
+    var val;
+    // get list of radio buttons with specified name
+    var radios = form.elements[name];
+    
+    // loop through list of radio buttons
+    for (var i=0, len=radios.length; i<len; i++) {
+        if ( radios[i].checked ) { // radio checked?
+            val = radios[i].value; // if so, hold its value in val
+            break; // and break out of for loop
+        }
+    }
+    return val; // return value of checked radio or undefined if none checked
+}
+      
       const submit = function( e ) {
     // prevent default form action from being carried out
     e.preventDefault()
@@ -194,14 +209,16 @@
      umail = document.querySelector(  '#umail' ),
      uaddress = document.querySelector( '#uaddress' ),
      uorder = document.querySelector( '#uorder'),
-     ucondiment = document.querySelector( '#ucondiment' ),
      uaddinfo = document.querySelector( '#uaddinfo' ),
+       
+       
+       
           json = { name: uname.value, 
                    num: unum.value,
                    mail: umail.value,
                    address: uaddress.value, 
                    order: uorder.value, 
-                   condiment: ucondiment.value, 
+                   condiment: getRadioVal(document.getElementById('orderForm'), "con"), 
                    addinfo:   uaddinfo.value,
                    method: umethod
                  },
@@ -247,20 +264,7 @@
     return false
   }
       
-      function getRadioVal(form, name) {
-    var val;
-    // get list of radio buttons with specified name
-    var radios = form.elements[name];
-    
-    // loop through list of radio buttons
-    for (var i=0, len=radios.length; i<len; i++) {
-        if ( radios[i].checked ) { // radio checked?
-            val = radios[i].value; // if so, hold its value in val
-            break; // and break out of for loop
-        }
-    }
-    return val; // return value of checked radio or undefined if none checked
-}
+ 
       
       const modID = function( e ) {
     // prevent default form action from being carried out
