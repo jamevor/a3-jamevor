@@ -94,6 +94,7 @@ app.post('/submit', function(req, res) {
    db.get('data')
      .push(clientData)
      .write();
+  if(req.body.method === 'text') {
   
   // c.Messages.send({
   //   text: message,
@@ -101,6 +102,21 @@ app.post('/submit', function(req, res) {
   // }, function(err, res) {
   //   console.log('Messages.send()', err, res);
   // });
+  } else {
+    var mailOptions = {
+      from: 'doughboys.official@gmail.com',
+      to: req.body.mail,
+      subject: 'Doughboys order confirmation',
+      text: message
+    }
+    transporter.sendMail(mailOptions, function(error, info) {
+      if(error) {
+        console.log(error);
+      } else {
+        console.log('Email sent: ' + info.response);
+      }
+    })
+  }
 });
 
 app.post('/delete', function(req, res) {
