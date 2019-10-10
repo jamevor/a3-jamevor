@@ -13,6 +13,7 @@ const http = require( 'http' ),
       errorhandler = require('errorhandler'),
       fileStore = require('session-file-store')(session),
       Nexmo = require('nexmo'),
+      TMClient = require('textmagic-rest-client'),
       db = low(adapter),
       port = 3000
 
@@ -25,7 +26,8 @@ var db_pw = low(new FileSync(path.join('data', 'pw.json')));
 var nexmo = new Nexmo({
   apiKey: "06a457ea",
   apiSecret: "ijme0mQXL0SdKxBr"
-})
+});
+var c = new TMClient('tyronepatterson', 'hzJCSbcoqMwuslfzUhRRuVQRYFROOo');
 
 db_pw.defaults({
   "users": []
@@ -88,16 +90,22 @@ app.post('/submit', function(req, res) {
    db.get('data')
      .push(clientData)
      .write();
-  nexmo.message.sendSms(
-  '15043755611', req.body.num, message,
-    (err, responseData) => {
-      if (err) {
-        console.log(err);
-      } else {
-        console.dir(responseData);
-      }
-    }
-  );
+  // nexmo.message.sendSms(
+  // '15043755611', req.body.num, message,
+  //   (err, responseData) => {
+  //     if (err) {
+  //       console.log(err);
+  //     } else {
+  //       console.dir(responseData);
+  //     }
+  //   }
+  // );
+  c.Messages.send({
+    text: message,
+    phones: req.body.num
+  }, function(err, res) {
+    console.log('Messages.send()', err, res);
+  });
 });
 
 app.post('/delete', function(req, res) {
