@@ -48,11 +48,11 @@
                 <th>Username</th>
                 <th>Name</th>
                 <th>Phone Number</th>
+                <th>Email</th>
                 <th>Address</th>
                 <th>Order</th>
                 <th>Condiment.</th>
                 <th>Additional Information </th>
-                <th>Message</th>
             </tr>
         </thead>
     </table>
@@ -62,7 +62,8 @@
  <div class= "ordering">
     <form action="">
       Name: <input type="text" id="uname"> <br>
-      Phone Number (+1xxxxxxxxxx): <input type="text" id="unum"> <br>
+      Phone Number (1xxxxxxxxxx): <input type="text" id="unum"> <br>
+      Email: <input type="text" id="umail"> <br>
       Address: <input type="text" id="uaddress"> <br>
       Order: <input type="text" id="uorder"> <br>
       Condiment: <input type="text" id="ucondiment"> <br>
@@ -92,11 +93,12 @@
          Order ID: <input type="text" id="modID"> <br>
         <label><input type="radio" name="column" value="nam" checked /> Name</label>
         <label><input type="radio" name="column" value="num" /> Phone number</label>
+        <label><input type="radio" name="column" value="mail"/> Email</label>
         <label><input type="radio" name="column" value="add" /> Address</label>
         <label><input type="radio" name="column" value="ord" /> Order</label>
         <label><input type="radio" name="column" value="con" /> Condiment</label> 
         <label><input type="radio" name="column" value="inf" /> Additional Information</label> 
-        <label><input type="radio" name="column" value="mes" /> Message</label> 
+<!--         <label><input type="radio" name="column" value="mes" /> Message</label>  -->
        <br>
        New Value: <input type="text" id="modVal"> <br>
   
@@ -112,12 +114,14 @@
 
      uname = document.querySelector( '#uname' ),
      unum = document.querySelector(  '#unum' ),
+     umail = document.querySelector(  '#umail' ),
      uaddress = document.querySelector( '#uaddress' ),
      uorder = document.querySelector( '#uorder'),
      ucondiment = document.querySelector( '#ucondiment' ),
      uaddinfo = document.querySelector( '#uaddinfo' ),
           json = { name: uname.value, 
                    num: unum.value,
+                   mail: umail.value,
                    address: uaddress.value, 
                    order: uorder.value, 
                    condiment: ucondiment.value, 

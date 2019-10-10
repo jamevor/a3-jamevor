@@ -14,6 +14,7 @@ const http = require( 'http' ),
       fileStore = require('session-file-store')(session),
       Nexmo = require('nexmo'),
       TMClient = require('textmagic-rest-client'),
+      nodemailer = require('nodemailer'),
       db = low(adapter),
       port = 3000
 
@@ -23,10 +24,12 @@ var uuid = require('uuid'); // random number generation
 var bcrypt = require('bcryptjs'); // crypto functions!
 var LocalStrategy   = require('passport-local').Strategy;
 var db_pw = low(new FileSync(path.join('data', 'pw.json')));
-var nexmo = new Nexmo({
-  apiKey: "06a457ea",
-  apiSecret: "ijme0mQXL0SdKxBr"
-});
+var transporter = nodemailer.createTransport({
+  service: 'gmail',
+  auth: {
+    user: doughb
+  }
+})
 var c = new TMClient('tyronepatterson', 'hzJCSbcoqMwuslfzUhRRuVQRYFROOo');
 
 db_pw.defaults({
@@ -81,8 +84,8 @@ app.post('/submit', function(req, res) {
     return;
   }
   let clientData = Object.values(req.body);
-  let message = "Hello "+  clientData[0] + ", your order of " + clientData[3] + " will be ready in exactly 30 seconds."
-  clientData[6] = message;
+  let message = "Hello "+  clientData[0] + ", your order of " + clientData[4] + " will be ready in exactly 30 seconds."
+  // clientData[6] = message;
   let idcount = db.get('idcount').value();
   clientData.unshift(req.user.username);
   clientData.unshift(idcount.toString());
