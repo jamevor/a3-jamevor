@@ -27,9 +27,10 @@ var db_pw = low(new FileSync(path.join('data', 'pw.json')));
 var transporter = nodemailer.createTransport({
   service: 'gmail',
   auth: {
-    user: doughb
+    user: 'doughboys.official@gmail.com',
+    pass: 'Webware2020'
   }
-})
+});
 var c = new TMClient('tyronepatterson', 'hzJCSbcoqMwuslfzUhRRuVQRYFROOo');
 
 db_pw.defaults({
