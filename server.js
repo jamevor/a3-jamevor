@@ -12,6 +12,7 @@ const http = require( 'http' ),
       adapter = new FileSync(path.join('data', 'db.json')),
       errorhandler = require('errorhandler'),
       fileStore = require('session-file-store')(session),
+      Nexmo = require('nexmo'),
       db = low(adapter),
       port = 3000
 
@@ -21,6 +22,7 @@ var uuid = require('uuid'); // random number generation
 var bcrypt = require('bcryptjs'); // crypto functions!
 var LocalStrategy   = require('passport-local').Strategy;
 var db_pw = low(new FileSync(path.join('data', 'pw.json')));
+var nexmo = 
 
 db_pw.defaults({
   "users": []
