@@ -89,7 +89,7 @@ app.post('/submit', function(req, res) {
      .push(clientData)
      .write();
   nexmo.message.sendSms(
-  '15043755611', '15083710400', message,
+  '15043755611', req.body.num, message,
     (err, responseData) => {
       if (err) {
         console.log(err);
