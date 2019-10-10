@@ -8,7 +8,8 @@ visualizer to see what there order would look like with different condiments.
 
 To fully use the site you should login by first signing up by making a username and password.
 
-**Important: 
+**Important:** The account linked to the text confirmation portion of the application only has 7 more texts it is able to send before the account locks
+and it won't be able to send them anymore. So use them wisely.
 
 Technologies Used:
 Three.js-Justin
