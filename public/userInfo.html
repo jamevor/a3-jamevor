@@ -59,8 +59,8 @@
             </div>
           </div>
           <div class="col-md-6 mb-3">
-            <label for="lastName">Last name</label>
-            <input type="text" class="form-control" id="lastName" placeholder="" value="" required>
+            <label for="lastName">Order</label>
+            <input type="text" class="form-control" id="lastName" placeholder="2 Waffles" value="" required>
             <div class="invalid-feedback">
               Valid last name is required.
             </div>
@@ -68,17 +68,17 @@
         </div>
 
         <div class="mb-3">
-          <label for="username">Username</label>
+          <label for="phone">Phone Number</label>
           <div class="input-group">
             <div class="input-group-prepend">
-              <span class="input-group-text">@</span>
+              <span class="input-group-text">+1</span>
             </div>
-            <input type="text" class="form-control" id="username" placeholder="Username" required>
+            <input type="text" class="form-control" id="username" placeholder="555-555-5555" required>
           </div>
         </div>
 
         <div class="mb-3">
-          <label for="email">Email/label>
+          <label for="email">Email </label>
           <input type="email" class="form-control" id="email" placeholder="you@example.com">
           <div class="invalid-feedback">
             Please enter a valid email address for shipping updates.
@@ -110,18 +110,16 @@
               <option value="">Choose...</option>
               <option>MA</option>
             </select>
-            <div class="invalid-feedback">
-              Please provide a valid state.
-            </div>
           </div>
           <div class="col-md-3 mb-3">
-            <label for="zip">Zip</label>
-            <input type="text" class="form-control" id="zip" placeholder="" required>
+            <label for="zip">Additional Info:</label>
+            <input type="text" class="form-control" id="addinfo" placeholder="extra syrup" required>
             <div class="invalid-feedback">
               Zip code required.
             </div>
           </div>
         </div>
+
 
         <hr class="mb-4">
         <button class="btn btn-primary btn-lg btn-block" type="submit">Continue to checkout</button>
