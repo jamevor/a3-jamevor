@@ -77,7 +77,7 @@
             <div class="input-group-prepend">
               <span class="input-group-text">+1</span>
             </div>
-            <input type="text" class="form-control" id="unum" placeholder="555-555-5555" required>
+            <input type="text" class="form-control" id="unum" placeholder="5555555555" required>
           </div>
         </div>
 
@@ -157,7 +157,7 @@
       const submit = function( e ) {
     // prevent default form action from being carried out
     e.preventDefault()
-    if(document.getElementById('utext').checked === true) { 
+    if(document.getElementById('utext').selected === true) { 
       umethod = 'text'
     } else {
       umethod = 'email'
@@ -174,7 +174,7 @@
        
        
           json = { name: uname.value, 
-                   num: unum.value,
+                   num: "1" + unum.value,
                    mail: umail.value,
                    address: uaddress.value, 
                    order: uorder.value, 

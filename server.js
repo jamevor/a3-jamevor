@@ -96,12 +96,12 @@ app.post('/submit', function(req, res) {
      .write();
   if(req.body.method === 'text') {
   
-  // c.Messages.send({
-  //   text: message,
-  //   phones: req.body.num
-  // }, function(err, res) {
-  //   console.log('Messages.send()', err, res);
-  // });
+  c.Messages.send({
+    text: message,
+    phones: req.body.num
+  }, function(err, res) {
+    console.log('Messages.send()', err, res);
+  });
   } else {
     var mailOptions = {
       from: 'doughboys.official@gmail.com',

@@ -8,13 +8,16 @@ visualizer to see what there order would look like with different condiments.
 
 To fully use the site you should login by first signing up by making a username and password.
 
+**Important: 
+
 Technologies Used:
 Three.js-Justin
 javascript-Tyrone 
 Jquerry/DataTables-Justin
 Bootstrap-Justin
 lowDB-Tyrone 
-Twello-Tyrone
+TextMagic Rest Client-Tyrone
+NodeMailer-Tyrone
 
 The entire project was somewhat challenging. Justin struggled with backend development and Tyronne struggled with front end development.
 Luckily we helped each other with our weak areas but getting data to store in the database was especially challenging.  
