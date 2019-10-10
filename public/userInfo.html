@@ -137,37 +137,7 @@
   
    <br><br>
 
-    <div class= "modify">
-      
-    <form action="">
-      <b>Remove Order:</b> <br>
-      Order ID: <input type="text" id="delID"> <br>
-    
-
-      <button id="buttonDelete">Submit</button>
-      
-    </form>
-    <br><br>
-      
-     <form action="" id="modForm">
-       <b>Modify Order:</b> <br>
-         Order ID: <input type="text" id="modID"> <br>
-        <label><input type="radio" name="column" value="nam" checked /> Name</label>
-        <label><input type="radio" name="column" value="num" /> Phone number</label>
-        <label><input type="radio" name="column" value="mail"/> Email</label>
-        <label><input type="radio" name="column" value="add" /> Address</label>
-        <label><input type="radio" name="column" value="ord" /> Order</label>
-        <label><input type="radio" name="column" value="con" /> Condiment</label> 
-        <label><input type="radio" name="column" value="inf" /> Additional Information</label> 
-<!--         <label><input type="radio" name="column" value="mes" /> Message</label>  -->
-       <br>
-       New Value: <input type="text" id="modVal"> <br>
-  
-      <button id="buttonModify">Submit</button>
-    </form>
-  
-    </div>
-
+   
     <script>
            function getRadioVal(form, name) {
     var val;
@@ -286,14 +256,14 @@
   }
 
   window.onload = function() {
-    const button = document.querySelector( '#buttonDelete' )
-    button.onclick = delID
+    //const button = document.querySelector( '#buttonDelete' )
+    //button.onclick = delID
     
     const button2 = document.querySelector( '#buttonSubmit' )
     button2.onclick = submit
     
-    const button3 = document.querySelector( '#buttonModify' )
-    button3.onclick = modID
+   // const button3 = document.querySelector( '#buttonModify' )
+   // button3.onclick = modID
   }
       
     </script>

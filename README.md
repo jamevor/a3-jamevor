@@ -1,26 +1,22 @@
 https://a4-jamevor.glitch.me/
 Justin Amevor
-jamevor@wpi.edu
+Tyrone Patterson
 Doughboyz Catering
 
-The goal of this application is for customers to visualize their order. 
-From the menu on the left the user can choose a food item and pick it 
-what condiment goes on it. 
+The goal of this application is for customers to order foods form the app. Customers can place an order and also use the 
+visualizer to see what there order would look like with different condiments. To fully use the site you should login 
+by first signing up by making a username and password.
 
-Getting the textures to load was very difficult along with
-getting the modules to work. 
+Technologies Used:
+Three.js-Justin
+javascript-Tyrone 
+Jquerry/DataTables-Justin
+Bootstrap-Justin
+lowDB-Tyrone 
+Twello-Tyrone
 
-I used JSHINT online linter. Many of the settings enabled 
-the application 
-
-
-Tech Achievement 1: My visualizer loads in multiple images
-Tech Achievement 2: I used modules to affect the camera of my visulization
-
-Design Achievement 1: The background of the loader was amde white instead of black becasue users thought white would be more inviting to customers
-Design Achievement 2: I followed best practices for accessibility, including providing alt attributes for images and using semantic HTML. There are no <div> or <span> elements in my document.
-
-
+This project deserves a 100 because we not only psent hours working on the implmentation of the technologies, we asked various 
+stakeholders features that they would like to have in a ordering application. From their feedback we established
 
 
 
