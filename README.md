@@ -16,8 +16,8 @@ Three.js-Justin This library was used to develop visualizations of customers ord
 The color of the visulization changes with the condiment
 javascript-Tyrone JS was used to implment the backend of server componets, access the database, and the button functinality on the homepage
 Jquerry/DataTables-Justin Datatables was used to visaualize the information put in the database 
-Bootstrap-Justin
-lowDB-Tyrone 
+Bootstrap-Justin Used to make the client pages look clewan and easy for the customers to use
+lowDB-Tyrone Used to implment the server of the application for various requests used through the site
 TextMagic Rest Client-This module allows you to send and recieve sms messages from the server. It requires an account to be created on their website and only gives you
 10 messages you can send before you have to pay. The account is given its own phone number which the messages send from and we send the texts to whatever
 number is specified by the user in their order.
