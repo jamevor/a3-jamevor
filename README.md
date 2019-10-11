@@ -12,8 +12,9 @@ To fully use the site you should login by first signing up by making a username 
 and it won't be able to send them anymore. So use them wisely.
 
 Technologies Used:
-Three.js-Justin
-javascript-Tyrone 
+Three.js-Justin This library was used to develop visualizations of customers orders where the suer can choose different menu items and add toppings onto their order. 
+The color of the visulization changes with the condiment
+javascript-Tyrone JS was used to implment the backend of server compentns, access the database, and the button functinality on the homepage
 Jquerry/DataTables-Justin
 Bootstrap-Justin
 lowDB-Tyrone 
