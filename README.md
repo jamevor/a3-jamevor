@@ -17,8 +17,11 @@ javascript-Tyrone
 Jquerry/DataTables-Justin
 Bootstrap-Justin
 lowDB-Tyrone 
-TextMagic Rest Client-Tyrone
-NodeMailer-Tyrone
+TextMagic Rest Client-This module allows you to send and recieve sms messages from the server. It requires an account to be created on their website and only gives you
+10 messages you can send before you have to pay. The account is given its own phone number which the messages send from and we send the texts to whatever
+number is specified by the user in their order.
+NodeMailer-Nodemailer is a module that makes it very easy to send emails. We created a new gmail address (doughboys.official@gmail.com) to send our emails from and we send
+them to whatever email the user specifies in their order.
 
 The entire project was somewhat challenging. Justin struggled with backend development and Tyronne struggled with front end development.
 Luckily we helped each other with our weak areas but getting data to store in the database was especially challenging.  
