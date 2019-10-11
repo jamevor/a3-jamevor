@@ -14,8 +14,8 @@ and it won't be able to send them anymore. So use them wisely.
 Technologies Used:
 Three.js-Justin This library was used to develop visualizations of customers orders where the suer can choose different menu items and add toppings onto their order. 
 The color of the visulization changes with the condiment
-javascript-Tyrone JS was used to implment the backend of server compentns, access the database, and the button functinality on the homepage
-Jquerry/DataTables-Justin
+javascript-Tyrone JS was used to implment the backend of server componets, access the database, and the button functinality on the homepage
+Jquerry/DataTables-Justin Datatables was used to visaualize the information put in the database 
 Bootstrap-Justin
 lowDB-Tyrone 
 TextMagic Rest Client-This module allows you to send and recieve sms messages from the server. It requires an account to be created on their website and only gives you
