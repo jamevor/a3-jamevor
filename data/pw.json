@@ -45,6 +45,11 @@
       "username": "t",
       "id": "9a62b8da-6a0f-469e-83d0-879a2868325c",
       "password": "$2a$10$1jQcYttp61ejpwhfNu1OfumSza3I7oWOWGJmDVE3KuTA4sgYx3r6W"
+    },
+    {
+      "username": "test",
+      "id": "2e814b4d-e202-405d-a8c0-33e5c1684c78",
+      "password": "$2a$10$H85fxnkpR9STwe9djwKJA.8NQZdXMU6o.fl.JwNOBgrNj5V4oKlNG"
     }
   ]
 }
